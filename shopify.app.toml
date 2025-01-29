@@ -1,0 +1,28 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "6e43740890faf5cef7e2f5bca1b743ce"
+application_url = "https://amusing-sunbird-key.ngrok-free.app"
+embedded = true
+name = "new-out-of-stock"
+handle = "new-out-of-stock-1"
+
+[webhooks]
+api_version = "2025-01"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_products,write_products,read_inventory,write_inventory"
+
+[auth]
+redirect_urls = [
+  "https://amusing-sunbird-key.ngrok-free.app/auth/callback",
+  "https://amusing-sunbird-key.ngrok-free.app/auth",
+]
+
+[pos]
+embedded = true
+
+
+[build]
+dev_store_url = "33-outofstock.myshopify.com"
+include_config_on_deploy = true
