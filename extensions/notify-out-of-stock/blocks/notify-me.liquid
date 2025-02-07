@@ -76,7 +76,12 @@ height: 100%;
 
         const targetContainer = document.querySelector(".product-form__buttons");
         if (targetContainer) {
-            targetContainer.appendChild(button);
+            if (window.product && window.product.available) {
+                button.style.display = "none";
+            }else{
+                targetContainer.innerHTML = "";
+                targetContainer.appendChild(button);
+            }
 
             button.addEventListener("click", function () {
                 console.log("Notify Me button clicked");
@@ -100,7 +105,7 @@ height: 100%;
 "name": "Notify Me Block",
 "target": "body",
 "settings": [
-{ "type": "text", "id": "button_text", "label": "Button Text", "default": "Notify Me" },
+{ "type": "text", "id": "button_text", "label": "Button Text", "default": "Add To Cart" },
 { "type": "color", "id": "button_color", "label": "Button Background Color", "default": "#FFFFFF" },
 { "type": "color", "id": "text_color", "label": "Button Text Color", "default": "#000000" },
 { "type": "range", "id": "font_size", "label": "Font Size", "min": 12, "max": 24, "default": 16 },
